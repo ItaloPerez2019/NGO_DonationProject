@@ -1,0 +1,49 @@
+{% extends "UserMngt/base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-2 col-md-2">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-light"><a href="{% url 'user-list' %}">User Management</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'donation-list' %}">Donation Management</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'donation_opt-list' %}">User View</a></li>
+    </ul>
+  </div>
+  <div class="col-lg-10 col-md-10">
+    <div class="text-right">
+      <h3><a href="{% url 'user-create'  %}"> Add New</a></h3>
+    </div>
+
+    <table class="table  table-bordered table-hover">
+      <thead class="">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in user_list%}
+        <tr>
+          <th scope="row"></th>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td><a href="{% url 'user-update' user.id %}">edit</a></td>
+          <td><a href="{% url 'user-delete' user.id %}">delete</a></td>
+
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

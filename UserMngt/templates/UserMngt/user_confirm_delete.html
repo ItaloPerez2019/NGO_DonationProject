@@ -1,0 +1,18 @@
+{% extends "UserMngt/base.html" %}
+
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Delete User</h2>
+        <h2>Are you sure you want to delete?</h2>
+
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+            <a class="btn btn-outline-secondary" href="{% url 'user-list' %}">Cancel</a>
+        </div>
+    </form>
+
+</div>
+{% endblock content %}

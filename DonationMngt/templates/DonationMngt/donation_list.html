@@ -1,0 +1,45 @@
+{% extends "UserMngt/base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-2 col-md-2">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-light"><a href="{% url 'user-list' %}">User Management</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'donation-list' %}">Donation Management</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'donation_opt-list' %}">User View</a></li>
+    </ul>
+  </div>
+  <div class="col-lg-10 col-md-10">
+
+
+    <table class="table  table-bordered table-hover">
+      <thead class="">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Donation Type</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for donation in donation_list%}
+        <tr>
+          <th scope="row"></th>
+          <td>{{ donation.name}}</td>
+          <td>{{ donation.date }}</td>
+          <td>{{ donation.amount }}</td>
+          <td>{{ donation.donation_type }}</td>
+
+
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

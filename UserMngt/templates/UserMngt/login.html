@@ -1,0 +1,22 @@
+{% extends "UserMngt/base.html" %}
+{% block content %}
+<div class="container">
+    {% if user.is_authenticated %}
+    <h1>Hi {{ user.username }}</h1>
+
+    {% else %}
+    <form method="POST" action="{% url 'login'  %}">
+        {% csrf_token %}
+        <div class="">
+            <h2 class="border-bottom mb-4">Log In</h2>
+            {{ form.as_p }}
+        </div>
+        <div class="">
+            <button class="btn btn-outline-info" type="submit">Login</button>
+        </div>
+    </form>
+    {% endif %}
+
+
+</div>
+{% endblock  %}

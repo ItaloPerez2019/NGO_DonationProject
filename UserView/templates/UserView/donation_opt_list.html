@@ -1,0 +1,47 @@
+{% extends "UserMngt/base.html" %}
+{% block content %}
+
+
+
+<div class="row">
+  <div class="col-lg-2 col-md-2">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-light"><a href="{% url 'user-list' %}">User Management</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'donation-list' %}">Donation Management</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'donation_opt-list' %}">User View</a></li>
+    </ul>
+  </div>
+  <div class="col-lg-10 col-md-10">
+
+
+    <table class="table  table-bordered table-hover">
+
+      <style>
+        .button {
+          background-color: rgb(17, 19, 17);
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+      </style>
+      <tr>
+        <div class="form-group">
+          <td><a href="#" class="button">Type 1</a></td>
+          <td><a href="#" class="button">Type 2</a></td>
+          <td><a href="#" class="button">Type 3</a></td>
+          <td><a href="#" class="button">Type 4</a></td>
+        </div>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

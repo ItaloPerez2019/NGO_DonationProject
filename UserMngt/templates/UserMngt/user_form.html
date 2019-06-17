@@ -1,0 +1,20 @@
+{% extends "UserMngt/base.html" %}
+
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Update/Create User</h2>
+        {{ form.as_p }}
+        <select>
+            <option value="">Admin</option>
+            <option value="">User</option>
+        </select>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Submit</button>
+        </div>
+    </form>
+
+</div>
+{% endblock content %}
